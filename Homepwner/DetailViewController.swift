@@ -8,12 +8,13 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 	
 	@IBOutlet var nameField: UITextField!
 	@IBOutlet var serialNumberField: UITextField!
 	@IBOutlet var valueField: UITextField!
 	@IBOutlet var dateLabel: UILabel!
+	@IBOutlet var imageView: UIImageView!
 
 	var item: Item! {
 		didSet {
@@ -76,5 +77,23 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
 			let dateViewController = segue.destinationViewController as! DateViewController
 			dateViewController.item = item
 		}
+	}
+
+	@IBAction func takePicture(sender: UIBarButtonItem) {
+
+		let imagePicker = UIImagePickerController()
+
+		// If the device has a camera, take a picture; otherwise,
+		// just pick from photo library
+		if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+			imagePicker.sourceType = .Camera
+		} else {
+			imagePicker.sourceType = .PhotoLibrary
+		}
+
+		imagePicker.delegate = self
+
+		// Place image picker on the screen
+		self.presentViewController(imagePicker, animated: true, completion: nil)
 	}
 }
