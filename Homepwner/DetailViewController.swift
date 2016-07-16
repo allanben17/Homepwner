@@ -96,9 +96,15 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
 		// just pick from photo library
 		if UIImagePickerController.isSourceTypeAvailable(.Camera) {
 			imagePicker.sourceType = .Camera
+
+			let overlay = UIImageView(image: UIImage(named: "crosshair"))
+			imagePicker.cameraOverlayView = overlay
+			overlay.center = imagePicker.view.center
 		} else {
 			imagePicker.sourceType = .PhotoLibrary
 		}
+
+		imagePicker.allowsEditing = true
 
 		imagePicker.delegate = self
 
@@ -106,10 +112,17 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
 		self.presentViewController(imagePicker, animated: true, completion: nil)
 	}
 
+	@IBAction func removePicture(sender: UIBarButtonItem) {
+
+		self.imageStore.deleteImageForKey(self.item.itemKey)
+		self.imageView.image = nil
+	}
+
+
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
 
 		// Get picked image from info dictionary
-		let image = info[UIImagePickerControllerOriginalImage] as! UIImage!
+		let image = info[UIImagePickerControllerEditedImage] as! UIImage!
 
 		// Store the image in the ImageStore for the item's key
 		self.imageStore.setImage(image, forKey: self.item.itemKey)
