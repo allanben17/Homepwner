@@ -18,6 +18,7 @@
 		F67D16F21D036C4D00352C8F /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D16F11D036C4D00352C8F /* ItemsViewController.swift */; };
 		F67D16F41D036EAF00352C8F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D16F31D036EAF00352C8F /* Item.swift */; };
 		F6CB072C1D283D5200310F4C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CB072B1D283D5200310F4C /* DetailViewController.swift */; };
+		F6DD17701D3AA8B400D63B93 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DD176F1D3AA8B400D63B93 /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F67D16F11D036C4D00352C8F /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		F67D16F31D036EAF00352C8F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F6CB072B1D283D5200310F4C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F6DD176F1D3AA8B400D63B93 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				F64C5C331D26CD1A00B44144 /* ItemCell.swift */,
 				F63F3B521D29B268009A3776 /* FocusTextField.swift */,
 				F6CB072B1D283D5200310F4C /* DetailViewController.swift */,
+				F6DD176F1D3AA8B400D63B93 /* ImageStore.swift */,
 				F639AEAF1D32A3F1001E72C5 /* DateViewController.swift */,
 				F67D16E31D03699B00352C8F /* Main.storyboard */,
 				F67D16E61D03699B00352C8F /* Assets.xcassets */,
@@ -158,6 +161,7 @@
 				F67D16F21D036C4D00352C8F /* ItemsViewController.swift in Sources */,
 				F67D16F41D036EAF00352C8F /* Item.swift in Sources */,
 				F64F9F591D15B6710089EE69 /* ItemStore.swift in Sources */,
+				F6DD17701D3AA8B400D63B93 /* ImageStore.swift in Sources */,
 				F6CB072C1D283D5200310F4C /* DetailViewController.swift in Sources */,
 				F67D16E01D03699B00352C8F /* AppDelegate.swift in Sources */,
 				F64C5C341D26CD1A00B44144 /* ItemCell.swift in Sources */,
