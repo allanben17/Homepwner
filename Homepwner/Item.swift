@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Item: NSObject {
+class Item: NSObject, NSCoding {
 	var name: String
 	var valueInDollars: Int
 	var serialNumber: String?
@@ -44,5 +44,25 @@ class Item: NSObject {
 		} else {
 			self.init(name: "", serialNumber: nil, valueInDollars: 0)
 		}
+	}
+
+	required init?(coder aDecoder: NSCoder) {
+		self.name = aDecoder.decodeObjectForKey("name") as! String
+		self.dateCreated = aDecoder.decodeObjectForKey("dateCreated") as! NSDate
+		self.itemKey = aDecoder.decodeObjectForKey("itemKey") as! String
+		self.serialNumber = aDecoder.decodeObjectForKey("serialNumber") as! String?
+
+		self.valueInDollars = aDecoder.decodeIntegerForKey("valueInDollars")
+
+		super.init()
+	}
+
+	func encodeWithCoder(aCoder: NSCoder) {
+		aCoder.encodeObject(self.name, forKey: "name")
+		aCoder.encodeObject(self.dateCreated, forKey: "dateCreated")
+		aCoder.encodeObject(self.itemKey, forKey: "itemKey")
+		aCoder.encodeObject(self.serialNumber, forKey: "serialNumber")
+
+		aCoder.encodeInteger(self.valueInDollars, forKey: "valueInDollars")
 	}
 }
